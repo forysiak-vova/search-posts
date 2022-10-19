@@ -49,7 +49,7 @@ export default {
    },
    methods: {
       createPost(post) {
-         this.posts.push(post);
+         this.posts.unshift(post);
          this.dialogVisible = false;
       },
       removePost(post) {
