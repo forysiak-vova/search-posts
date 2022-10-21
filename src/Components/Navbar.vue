@@ -1,18 +1,25 @@
 <template>
 <div class="navbar">
    <div class="home" @click="$router.push('/')">Vue.js</div>
-         <div>
-            <my-button @click="$router.push('/post')" style="margin-right: 10px" to="/post">Пости</my-button>
-            <my-button @click="$router.push('/about')" style="margin-right: 10px">Опис</my-button>
-            <my-button @click="$router.push('/store')">Store</my-button>
+         <div @click="click">
+            <my-button @click="$router.push('/post')" v-on:click="activeBtn = 'btn1'" v-bind:class="{active: activeBtn === 'btn1'}" style="margin-right: 10px">Пости</my-button>
+            <my-button @click="$router.push('/about')" v-on:click="activeBtn = 'btn2'" v-bind:class="{active: activeBtn === 'btn2'}" style="margin-right: 10px">Опис</my-button>
+            <my-button @click="$router.push('/store')" v-on:click="activeBtn = 'btn3'" v-bind:class="{active: activeBtn === 'btn3'}" style="margin-right: 10px">Store</my-button>
+            <my-button @click="$router.push('/composition')" v-on:click="activeBtn = 'btn4'" v-bind:class="{active: activeBtn === 'btn4'}" style="margin-right: 10px">composition</my-button>
          </div>
 </div>
 </template>
 <script>
+
 export default {
+   data() {
+      return {
+         activeBtn: '',
+      }
+   },
 }
 </script>
-<style>
+<style scoped>
 .navbar{
    height: 70px;
    background-color: grey;
@@ -25,6 +32,12 @@ export default {
    cursor: pointer;
 }
 .home:hover{
+   color:white;
+}
+.active {
+   background-color: blue;
+}
+.activeColor{
    color:white;
 }
 </style>

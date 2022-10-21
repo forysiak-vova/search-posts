@@ -1,18 +1,10 @@
 <template>
     <div>
-   <!--  <h1>{{$store.state.isAuth ? 'Користувач авторизований' : 'Авторизуйтесь будь-ласка'}}</h1>
-      <h1>{{$store.getters.dobleLikes}}</h1>
-      <div>
-         <my-button @click="$store.commit('incrementLikes')">+</my-button>
-         <my-button @click="$store.commit('decrementLikes')">-</my-button>
-      </div> -->
-
-
       <h1>Vue.js</h1>
       <my-input :model-value="serchQuery" @update:model-value="setSearchQuery"></my-input>
       <div class="management-post">
          <my-button @click="openModal">Створити новий пост</my-button>
-         <!-- <my-selected v-model="selectedSort" :options="sortOptions" /> -->
+         <my-selected :model-value="selectedSort"  @update:model-value="setSelectorSort" :options="sortOptions"/>
       </div>
       <my-dialog v-model:show="dialogVisible">
          <post-form @create="createPost" />
@@ -40,7 +32,8 @@ export default {
    methods: {
       ...mapMutations({
          setPage: 'post/setPage',
-         setSearchQuery: 'post/setSearchQuery'
+         setSearchQuery: 'post/setSearchQuery',
+         setSelectorSort: 'post/setSelectorSort'
       }),
       ...mapActions({
          fetchPosts: 'post/fetchPosts',
@@ -51,7 +44,7 @@ export default {
          this.dialogVisible = false;
       },
       removePost(post) {
-         this.posts = this.posts.filter(el => el.id !== post.id)
+         this.sortedAndSearchPost = this.posts.filter(el => el.id !== post.id)
       },
       openModal() {
          this.dialogVisible = true;
@@ -108,9 +101,4 @@ export default {
 .current-page {
    border: 5px solid blue;
 }
-
-/* .observer{
-   height: 30px;
-   background-color: green;
-} */
 </style>
