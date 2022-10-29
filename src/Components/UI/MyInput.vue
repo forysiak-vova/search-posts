@@ -14,6 +14,7 @@ export default {
    methods: {
       updateInput(event) {
          this.$emit('update:modelValue', event.target.value)
+         // console.log(event)
       }
    }
 }

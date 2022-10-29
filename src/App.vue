@@ -1,9 +1,8 @@
 <template>
    <navbar></navbar>
-
-<!-- <div class="card"> -->
+<div class="card">
    <router-view></router-view>
-      <lorem></lorem>
+</div>
 </template>
 <script>
 import Navbar from "@/Components/Navbar.vue";
@@ -13,7 +12,7 @@ import 'bootstrap/dist/js/bootstrap.js';
 import Lorem from '@/Components/Lorem.vue'
 export default {
    components: {
-      Navbar, Lorem
+      Navbar
 }
 }
 </script>
