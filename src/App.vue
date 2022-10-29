@@ -8,8 +8,8 @@
 <script>
 import Navbar from "@/Components/Navbar.vue";
 
-// import 'bootstrap/dist/css/bootstrap.css';
-// import 'bootstrap/dist/js/bootstrap.js';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
 import Lorem from '@/Components/Lorem.vue'
 export default {
    components: {
