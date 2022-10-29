@@ -1,14 +1,19 @@
 <template>
    <navbar></navbar>
-<div class="card">
+
+<!-- <div class="card"> -->
    <router-view></router-view>
-</div>
+      <lorem></lorem>
 </template>
 <script>
-import Navbar from "@/Components/Navbar.vue"
+import Navbar from "@/Components/Navbar.vue";
+
+// import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/js/bootstrap.js';
+import Lorem from '@/Components/Lorem.vue'
 export default {
    components: {
-      Navbar
+      Navbar, Lorem
 }
 }
 </script>
